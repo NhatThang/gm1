@@ -10,7 +10,7 @@
 
 <body>
     <div id="start">
-        <h1>Quy định trò chơi: bắn trúng viên bi màu đỏ sẽ được thưởng 1 tỷ =))<br>Lưu ý: game chỉ dành cho PC</h1>
+        <h1>Quy định trò chơi: bắn trúng viên bi màu đỏ sẽ được thưởng 1 tỷ =))</h1>
         <button class="zoogm">START</button>
     </div>
     <div id="main">
@@ -32,9 +32,9 @@
         function animateMydiv() {
             $('#box').animate({
                 left: width + 'px'
-            }, 2000).animate({
+            }, 1000).animate({
                 left: '0px'
-            }, 2000, animateMydiv);
+            }, 1000, animateMydiv);
         }
         animateMydiv();
 
@@ -157,6 +157,52 @@
         position: absolute;
         top: 70%;
         left: 50%;
+    }
+    
+    @media (max-width: 576px) {
+        .up {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 77%;
+            left: 41%;
+        }
+        .down {
+            width: 160px;
+            height: 50px;
+            position: absolute;
+            bottom: 10%;
+            left: 27%;
+        }
+        .mid {
+            width: 50px;
+            height: 40px;
+            background: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 74%;
+            left: 41%;
+        }
+        button.shoot {
+            padding: 5px 15px;
+            font-weight: bold;
+            border-radius: 3px;
+            background: yellow;
+            border: 1px solid black;
+            cursor: pointer;
+            position: absolute;
+            top: 86%;
+            left: 70%;
+        }
+        .bullet {
+            width: 50px;
+            height: 50px;
+            background: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 74%;
+            left: 41%;
+        }
     }
 </style>
 
