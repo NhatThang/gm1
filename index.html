@@ -19,6 +19,7 @@
             <div class="common up"></div>
             <div class="common down"></div>
             <div class="mid"></div>
+            <div class="haha" style="padding: 100px;"></div>
         </div>
         <button class="shoot">Bắn</button>
     </div>
@@ -26,8 +27,7 @@
 </body>
 <script>
     var width = $(window).width() - 60;
-
-    $(function() {
+    $(() => {
 
         function animateMydiv() {
             $('#box').animate({
@@ -39,23 +39,37 @@
         animateMydiv();
 
         $heightB = $(window).height();
-        $('.shoot').on('click', function() {
+        $('.shoot').on('click', () => {
             $('div#control').prepend('<div class="bullet"></div>');
             $fly = $('.bullet').animate({
                 top: '-60px',
-            }, function() {
+            }, () => {
                 if ($fly) {
                     $('.bullet').remove();
-                    alert("Bắn ngu vc");
+                    alert(name + "Bắn ngu vc");
                 }
             });
         });
 
-        $('.zoogm').on('click', function() {
+        $('.zoogm').on('click', () => {
             $('#main').show(1500);
             $('#start').hide(1500);
+            var aa = confirm("Nhập tên của bạn để bắt đầu");
+            if (aa == true) {
+                var name = prompt('Ten cua ban?');
+                alert("Ten cua ban la: " + name);
+            } else {
+                alert("Ok bro");
+            }
         });
 
+        setInterval(() => {
+            $pos = $('#box').position();
+            $(".haha").html("left: " + $pos.left + ", top: " + $pos.top + "<br>");
+            // console.log($pos);
+            // $posB = $('.bullet').position();
+            // $(".haha").html("left: " + $posB.left + ", top: " + $posB.top + "<br>");
+        }, 100);
     });
 </script>
 <style>
