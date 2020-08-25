@@ -52,15 +52,15 @@
         });
 
         $('.zoogm').on('click', () => {
-            $('#main').show(1500);
-            $('#start').hide(1500);
             var aa = confirm("Nhập tên của bạn để bắt đầu");
             if (aa == true) {
                 var name = prompt('Ten cua ban?');
-                alert("Ten cua ban la: " + name);
+                alert("Hello " + name);
             } else {
                 alert("Ok bro");
             }
+            $('#main').show(1500);
+            $('#start').hide(1500);
         });
     });
 </script>
